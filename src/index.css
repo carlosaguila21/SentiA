@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --color-sleek-bg: #F4F7FA;
+  --color-sleek-sidebar: #1E293B;
+  --color-sleek-card: #FFFFFF;
+  --color-sleek-primary: #3B82F6;
+  --color-sleek-danger: #EF4444;
+  --color-sleek-warning: #F59E0B;
+  --color-sleek-success: #10B981;
+  --color-sleek-text-main: #0F172A;
+  --color-sleek-text-dim: #64748B;
+  --color-sleek-border: #E2E8F0;
+}
+
+@layer base {
+  body {
+    @apply bg-sleek-bg text-sleek-text-main font-sans antialiased;
+  }
+}
+
+.sleek-card {
+  @apply bg-sleek-card border border-sleek-border rounded-xl shadow-sm;
+}
+
+.sleek-panel {
+  @apply bg-sleek-card border border-sleek-border rounded-xl overflow-hidden flex flex-col;
+}
+
+.sleek-header {
+  @apply flex justify-between items-center mb-6;
+}
+
+.sleek-sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all cursor-pointer text-white/70 hover:text-white hover:bg-white/10;
+}
+
+.sleek-sidebar-item.active {
+  @apply bg-sleek-primary/20 text-white font-semibold;
+}
+
